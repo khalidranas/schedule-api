@@ -42,6 +42,11 @@ namespace SchedulingApi.Controllers
         public IActionResult Create(ScheduleDto schedule)
         {
             // Validate 
+            if(schedule==null)
+            {
+                return new BadRequestResult();
+            }
+
             scheduleService.CreateSchedule(schedule.ToSchedule());
 
             // Post data to service
