@@ -25,7 +25,7 @@ namespace SchedulingApi.Tests.Unit.Controllers
         public void GivenScheduleInputData_WhenCalledCreate_ThenReturnsOKResponse()
         {
             var result = _sut.Create(null);
-            Assert.IsType<OkObjectResult>(result);
+            Assert.IsType<BadRequestResult>(result);
         }
     }
 }
