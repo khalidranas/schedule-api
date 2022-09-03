@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SchedulingApi.Configurations;
 using SchedulingApi.Repositories;
 using SchedulingApi.Services;
 
@@ -35,6 +36,7 @@ namespace SchedulingApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SchedulingApi", Version = "v1" });
             });
 
+            services.AddScoped<IAppSettings, AppSettings>();
             services.AddScoped<IScheduleService, ScheduleService>();
             services.AddScoped<IScheduleRepository, ScheduleRepository>();
         }

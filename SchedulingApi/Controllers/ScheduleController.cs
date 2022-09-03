@@ -15,11 +15,6 @@ namespace SchedulingApi.Controllers
     [Route("[controller]")]
     public class ScheduleController : ControllerBase
     {
-        private static readonly string[] Statues = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
         private readonly ILogger<ScheduleController> logger;
         private readonly IScheduleService scheduleService;
 
